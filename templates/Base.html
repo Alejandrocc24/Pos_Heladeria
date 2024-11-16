@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title | default("POS de Venta") }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/datos.css') }}">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+ 
+  </head>
+  <body>
+    <header class="header">
+      <div class="header">
+        <!-- aqui inicia el codigo de la barra de navegacion -->
+        <div class="logo">
+         <img alt="Fudo Logo" height="30" src="https://storage.googleapis.com/a1aa/image/M42XQdZdRu7kGxIw546s3GPL10B0T8EbF8I72JZV2vY9ft4JA.jpg" width="100"/>
+        </div>
+        <div class="icons">
+          <form method="POST" action="{{ url_for('Home') }}">
+            <button type="submit" name="csrf_token" value="{{ csrf_token() }}">
+                <i class="fas fa-utensils"></i>
+            </button>
+        </form>
+          <button>
+            <i class="fas fa-chart-bar">
+            </i>
+           </button>
+           <button>
+            <i class="fas fa-calculator">
+            </i>
+           </button>
+           <button>
+            <i class="fas fa-bowl-food">
+            </i>
+           </button>
+           <button>
+            <i class="fas fa-desktop">
+            </i>
+           </button>
+           <button>
+            <i class="fas fa-cogs">
+            </i>
+           </button>
+        </div>
+        <div class="right-section">
+         <div class="date-time">
+          <div class="date">
+           VIERNES 15 NOV.
+          </div>
+          <div class="time">
+           22:12
+          </div>
+         </div>
+         <div class="pro">
+          <i class="fas fa-star">
+          </i>
+          PRO
+         </div>
+         <div class="user">
+          <i class="fas fa-user">
+          </i>
+          pepitochus admin
+         </div>
+         <div class="icons">
+          <i class="fas fa-envelope">
+          </i>
+          <i class="fas fa-question-circle">
+          </i>
+         </div>
+        </div>
+       </div>
+<!-- hasta aca llega el contenido de la pagina -->
+      <!-- <div class="logo">
+        <h1>Dulce</h1>
+      </div>
+      <div class="menu-icons">
+        <span>Iconos de Menú</span>
+      </div>
+      <div class="user-info">
+        <span>{{ session['username'] | default('Usuario') }}</span>
+      </div> -->
+    </header>
+
+    <div class="tabs">
+      <button class="tab active" onclick="showSection('tables')">Mesas</button>
+      <button class="tab" onclick="showSection('counter')">Mostrador</button>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <form method="POST" action="{{ url_for('Logout') }}">
+      <button type="submit" class="btn btn-primary btn-block btn-large">
+        LOGOUT
+      </button>
+    </form>
+
+    <script>
+      function showSection(sectionId) {
+        document.getElementById("tables").style.display =
+          sectionId === "tables" ? "block" : "none";
+        document.getElementById("counter").style.display =
+          sectionId === "counter" ? "block" : "none";
+
+        document
+          .querySelectorAll(".tab")
+          .forEach((tab) => tab.classList.remove("active"));
+        document
+          .querySelector(`.tab[onclick="showSection('${sectionId}')"]`)
+          .classList.add("active");
+      }
+    </script>
+  </body>
+</html>

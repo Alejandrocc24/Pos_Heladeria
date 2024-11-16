@@ -1,0 +1,254 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Barra superior */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.header .logo h1 {
+  font-size: 1.5em;
+}
+
+.header .menu-icons,
+.header .user-info {
+  font-size: 0.9em;
+}
+
+/* Contenido principal */
+.main-content {
+  padding: 20px;
+}
+
+/* Navegación de pestañas */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+}
+
+.tab {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tab.active,
+.tab:hover {
+  background-color: #555;
+}
+
+/* Título de la sección */
+.section-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Diseño de las mesas */
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.table1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* Estados de las mesas */
+.table1.occupied {
+  background-color: #ff4d4d;
+}
+
+.table1.available {
+  background-color: #4caf50;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 70%;
+  padding: 8px;
+  font-size: 1em;
+}
+
+.search-bar button {
+  background-color: #ff8000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Sección de pedidos y nuevo pedido */
+.order-section,
+.new-order-form {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.new-order-form button {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background-color: white;
+  color: #ff8000;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+.header .logo img {
+  height: 30px;
+}
+.header .icons {
+  display: flex;
+  align-items: center;
+}
+.header .icons button {
+  font-size: 20px;
+  margin: 0 10px;
+  color: #666;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.header .icons button:hover {
+  color: #333;
+}
+.header .right-section {
+  display: flex;
+  align-items: center;
+}
+.header .right-section .date-time {
+  margin-right: 20px;
+  text-align: right;
+}
+.header .right-section .date-time .date {
+  font-size: 12px;
+  color: #666;
+}
+.header .right-section .date-time .time {
+  font-size: 20px;
+  color: #333;
+}
+.header .right-section .pro {
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+.header .right-section .pro i {
+  margin-right: 5px;
+}
+.header .right-section .user {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.header .right-section .user i {
+  margin-right: 5px;
+}
+.header .right-section .icons i {
+  margin-right: 10px;
+}
+.notification-bar {
+  background-color: #4285f4;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px;
+}
+.tabs {
+  background-color: #4a4a4a;
+  color: white;
+  display: flex;
+  padding: 10px 20px;
+}
+.tabs .tab {
+  margin-right: 20px;
+  cursor: pointer;
+}
+.tabs .tab.active {
+  border-bottom: 2px solid white;
+}
+.search-bar {
+  background-color: #4a4a4a;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+.search-bar input {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+}
+
+.section {
+    padding: 20px;
+}
+.section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.table th {
+    background-color: #f0f0f0;
+}
+.table .empty-row {
+    text-align: center;
+    color: #888;
+}
