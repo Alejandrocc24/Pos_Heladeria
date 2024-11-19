@@ -18,16 +18,15 @@
   <!-- Grid para mostrar las mesas -->
   <div class="tables-grid">
     <!-- Botones para cada mesa con diferentes estados -->
-    <button class="table1 occupied">1</button>
-    <!-- Mesa ocupada -->
-    <button class="table1 available">2</button>
-    <!-- Mesa disponible -->
-    <button class="table1 available">3</button>
-    <button class="table1 available">4</button>
-    <button class="table1 available">5</button>
-    <button class="table1 available">6</button>
-    <button class="table1 available">7</button>
+    <button class="table1 available" onclick="changeStatus(this)">1</button>
+    <button class="table1 available" onclick="changeStatus(this)">2</button>
+    <button class="table1 available" onclick="changeStatus(this)">3</button>
+    <button class="table1 available" onclick="changeStatus(this)">4</button>
+    <button class="table1 available" onclick="changeStatus(this)">5</button>
+    <button class="table1 available" onclick="changeStatus(this)">6</button>
+    <button class="table1 available" onclick="changeStatus(this)">7</button>
   </div>
+
 </div>
 
 <!-- Sección del mostrador (inicialmente oculta) -->
@@ -88,6 +87,19 @@
       </tbody>
     </table>
   </div>
+
+  <script>
+    function changeStatus(button) {
+      if (button.classList.contains('available')) {
+        button.classList.remove('available');
+        button.classList.add('occupied');
+      } else {
+        button.classList.remove('occupied');
+        button.classList.add('available');
+      }
+    }
+  </script>
+
 </div>
 
 {% endblock %}

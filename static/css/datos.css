@@ -16,6 +16,15 @@
   padding: 10px 20px;
 }
 
+.logout-btn {
+  font-size: 24px !important;
+  color: #007bff !important;
+}
+
+.logout-btn:hover {
+  color: #dc3545; 
+}
+
 .header .logo h1 {
   font-size: 1.5em;
 }
@@ -174,7 +183,7 @@
   font-size: 20px;
   color: #333;
 }
-.header .right-section .pro {
+.header .right-section {
   background-color: #e0e0e0;
   padding: 5px 10px;
   border-radius: 5px;
@@ -182,7 +191,7 @@
   display: flex;
   align-items: center;
 }
-.header .right-section .pro i {
+.header .right-section i {
   margin-right: 5px;
 }
 .header .right-section .user {
@@ -419,10 +428,10 @@ th {
   border-radius: 5px;
   cursor: pointer;
 }
-.content {
+.content-gastos {
   padding: 20px;
 }
-.content h1 {
+.content-gastos h1 {
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -491,15 +500,7 @@ table th {
 .navbar a:hover {
   background-color: #6a6a6a;
 }
-.sidebar {
-  width: 200px;
-  background-color: #4a4a4a;
-  color: white;
-  position: fixed;
-  top: 50px;
-  bottom: 0;
-  padding: 20px;
-}
+
 .sidebar h2 {
   margin-top: 0;
   display: flex;
@@ -664,7 +665,15 @@ table th {
   padding: 10px 20px;
   display: flex;
   align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }
+
+.headerss{
+  display: flex;
+  align-items: center;
+}
+
 .header button {
   background: none;
   border: none;
@@ -676,15 +685,20 @@ table th {
 .header button.active {
   font-weight: bold;
 }
+
 .sidebar {
   background-color: #4a4a4a;
   color: white;
-  width: 250px;
-  height: 100vh;
+  width: auto;
   padding: 20px;
   box-sizing: border-box;
   float: left;
+  margin-top: 0.1rem;
+  position: static;
+  scroll-behavior: inherit;
+  height: 103vh;
 }
+
 .sidebar h2 {
   font-size: 18px;
   margin-top: 0;

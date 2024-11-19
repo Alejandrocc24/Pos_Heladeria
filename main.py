@@ -49,6 +49,11 @@ def Logout():
     return redirect('/')  # Redirige al login
 
 
+# Ruta para retorno al home
+@App.route('/HomePages/', methods=['POST', 'GET'])
+def HomePages():
+     return render_template('Home.html') 
+
 # Ruta para ventas
 @App.route('/Ventas/', methods=['POST', 'GET'])
 def Ventas():

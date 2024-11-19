@@ -18,9 +18,11 @@
   </head>
   <body>
     <header class="header">
+
       <div class="header">
         <!-- Inicio de la barra de navegación -->
         <div class="logo">
+          <h1>Dulce</h1>
           <!-- Logo del sistema -->
           <img
             alt="Fudo Logo"
@@ -28,10 +30,11 @@
             src="https://storage.googleapis.com/a1aa/image/M42XQdZdRu7kGxIw546s3GPL10B0T8EbF8I72JZV2vY9ft4JA.jpg"
             width="100"
           />
-        </div>
+        
+
         <div class="icons">
           <!-- Botón restaurante -->
-          <form method="POST" action="{{ url_for('Home') }}">
+          <form method="POST" action="{{ url_for('HomePages') }}">
             <button type="submit" name="csrf_token" value="{{ csrf_token() }}">
               <i class="fas fa-utensils"></i>
             </button>
@@ -72,23 +75,22 @@
             </button>
           </form>
         </div>
+      </div>
 
-        <!-- Sección derecha de la barra -->
+      <div class="headerss">
         <div class="right-section">
           <div class="date-time">
             <!-- Fecha y hora -->
             <div class="date">VIERNES 15 NOV.</div>
             <div class="time">22:12</div>
           </div>
-          <div class="pro">
-            <!-- Indicador de suscripción PRO -->
+          <!-- <div class="pro">
             <i class="fas fa-star"></i>
             PRO
-          </div>
+          </div> -->
           <div class="user">
-            <!-- Información del usuario actual -->
             <i class="fas fa-user"></i>
-            pepitochus admin
+            <span>{{ session['username'] | default('Usuario') }}</span>
           </div>
           <div class="icons">
             <!-- Iconos adicionales -->
@@ -96,31 +98,17 @@
             <i class="fas fa-question-circle"></i>
           </div>
         </div>
+        <form method="POST" action="{{ url_for('Logout') }}">
+          <button type="submit" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> 
+          </button>
+        </form>
       </div>
-      <!-- Fin de la barra de navegación -->
 
-      <!-- Sección principal del encabezado -->
-      <div class="logo">
-        <h1>Dulce</h1>
-      </div>
-      <div class="menu-icons">
-        <span>Iconos de Menú</span>
-      </div>
-      <div class="user-info">
-        <!-- Muestra el nombre del usuario actual almacenado en la sesión -->
-        <span>{{ session['username'] | default('Usuario') }}</span>
-      </div>
     </header>
 
     <!-- Bloque de contenido dinámico -->
     {% block content %} {% endblock %}
-
-    <!-- Botón para cerrar sesión -->
-    <form method="POST" action="{{ url_for('Logout') }}">
-      <button type="submit" class="btn btn-primary btn-block btn-large">
-        LOGOUT
-      </button>
-    </form>
 
     <!-- Script para manejar las secciones dinámicas -->
     <script>
