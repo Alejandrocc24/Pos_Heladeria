@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+<!-- Indica que esta plantilla hereda de "base.html" -->
+
+{% block content %}
+<html>
+  <head>
+    <title>Productos</title>
+    <!-- Título de la página -->
+    <!-- Enlace a la biblioteca de íconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Barra de navegación principal -->
+    <div class="navbar">
+      <a href="#">Productos</a>
+      <a href="#">Ingredientes</a>
+      <a href="#">Grupos modificadores</a>
+      <a href="#">Cat. de Productos</a>
+      <a href="#">Cat. de Ingredientes</a>
+      <a href="#">Control de Stock</a>
+      <a href="#">Movimientos de Stock</a>
+      <a href="#">Conteo de inventario</a>
+      <a href="#">Lista de precios</a>
+    </div>
+
+    <!-- Barra lateral (título de la sección actual) -->
+    <div class="sidebar">
+      <h2>Productos</h2>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+      <!-- Botones para acciones rápidas -->
+      <div class="top-buttons">
+        <button><i class="fas fa-bars"></i> Ordenar Productos</button>
+        <!-- Ordenar productos -->
+        <button class="importar">
+          <i class="fas fa-plus"></i> Importar menú
+        </button>
+        <!-- Importar productos en lote -->
+        <button><i class="fas fa-plus"></i> Nuevo producto</button>
+        <!-- Crear un nuevo producto -->
+      </div>
+
+      <!-- Barra de búsqueda -->
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Buscar en todas las categorías:" />
+        <!-- Campo de búsqueda -->
+      </div>
+
+      <!-- Tabla para listar productos -->
+      <table class="table">
+        <!-- Encabezados de las columnas -->
+        <thead>
+          <tr>
+            <th>Cód.</th>
+            <!-- Código del producto -->
+            <th>Producto</th>
+            <!-- Nombre del producto -->
+            <th>Costo</th>
+            <!-- Costo del producto -->
+            <th>Margen $</th>
+            <!-- Margen en dinero -->
+            <th>Margen %</th>
+            <!-- Margen porcentual -->
+            <th>Markup %</th>
+            <!-- Porcentaje de markup -->
+            <th>Precio</th>
+            <!-- Precio de venta -->
+          </tr>
+        </thead>
+        <!-- Cuerpo de la tabla -->
+        <tbody>
+          <!-- Las filas con los datos de los productos se generarán aquí dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+{% endblock %}

@@ -229,26 +229,502 @@
 }
 
 .section {
-    padding: 20px;
+  padding: 20px;
 }
 .section h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
-.table th, .table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
 }
 .table th {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 .table .empty-row {
-    text-align: center;
-    color: #888;
+  text-align: center;
+  color: #888;
+}
+
+.navbar {
+  background-color: #4a4a4a;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 14px;
+}
+.navbar a.active {
+  font-weight: bold;
+}
+.container {
+  padding: 20px;
+}
+.header {
+  background-color: #e0e0e0;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.filters {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+}
+.filters select {
+  margin-right: 10px;
+  padding: 5px;
+}
+.summary {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.summary div {
+  flex: 1;
+  text-align: center;
+}
+.summary div:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+.table-container {
+  margin-top: 10px;
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+th {
+  background-color: #f0f0f0;
+}
+/*css de ventas*/
+
+.navbar {
+  background-color: #4a4a4a;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 14px;
+}
+.navbar a.active {
+  font-weight: bold;
+}
+.container {
+  padding: 20px;
+}
+.header {
+  background-color: #e0e0e0;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.filters {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+}
+.filters select {
+  margin-right: 10px;
+  padding: 5px;
+}
+.summary {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.summary div {
+  flex: 1;
+  text-align: center;
+}
+.summary div:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+.table-container {
+  margin-top: 10px;
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+th {
+  background-color: #f0f0f0;
+}
+
+/* Css de boton gastos*/
+.header {
+  background-color: #3a3a3a;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .tabs {
+  display: flex;
+}
+.header .tabs div {
+  margin-right: 20px;
+  cursor: pointer;
+}
+.header .tabs div.active {
+  border-bottom: 2px solid #007bff;
+}
+.header .new-expense {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.content {
+  padding: 20px;
+}
+.content h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.filters {
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.filters select {
+  margin-right: 10px;
+  padding: 5px;
+}
+.filters .filter-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.summary {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.summary p {
+  margin: 0;
+}
+.summary .total {
+  text-align: right;
+  font-weight: bold;
+}
+.table-container {
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+table th {
+  background-color: #f8f9fa;
+}
+
+/* Css de productos*/
+.navbar {
+  background-color: #4a4a4a;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+.navbar a:hover {
+  background-color: #6a6a6a;
+}
+.sidebar {
+  width: 200px;
+  background-color: #4a4a4a;
+  color: white;
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  padding: 20px;
+}
+.sidebar h2 {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar h2 .menu {
+  display: flex;
+  align-items: center;
+}
+.sidebar h2 .menu button {
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.sidebar h2 .menu button:hover {
+  background-color: #6a6a6a;
+}
+.sidebar h2 .menu .importar {
+  background-color: #ff8c00;
+}
+.sidebar h2 .menu .importar:hover {
+  background-color: #ffa500;
+}
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+.sidebar a:hover {
+  background-color: #6a6a6a;
+}
+.content {
+  margin-left: 220px;
+  padding: 20px;
+}
+.search-bar {
+  background-color: #e0e0e0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px; /* Added margin-top to move it down */
+}
+.search-bar input {
+  margin-left: 10px;
+  padding: 5px;
+  flex: 1;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th,
+.table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.table th {
+  background-color: #f0f0f0;
+}
+.top-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+.top-buttons button {
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.top-buttons button:hover {
+  background-color: #6a6a6a;
+}
+.top-buttons .importar {
+  background-color: #ff8c00;
+}
+.top-buttons .importar:hover {
+  background-color: #ffa500;
+}
+
+/*CSS de pantalla*/
+
+.container {
+  padding: 10px;
+  background-color: #fff;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.header h1 {
+  font-size: 18px;
+  margin: 0;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+}
+.button {
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+.button.at-time {
+  background-color: #e0e0e0;
+  color: #000;
+}
+.button.delayed {
+  background-color: #ffeb3b;
+  color: #000;
+}
+.button.very-delayed {
+  background-color: #b71c1c;
+  color: #fff;
+}
+.dropdown {
+  background-color: #ff5722;
+  color: #fff;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+.toggle {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.toggle input {
+  margin-right: 5px;
+}
+.full-screen {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.full-screen i {
+  margin-right: 5px;
+}
+
+/* CSS de configuracion*/
+
+.header {
+  background-color: #4a4a4a;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+.header button {
+  background: none;
+  border: none;
+  color: white;
+  margin-right: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.header button.active {
+  font-weight: bold;
+}
+.sidebar {
+  background-color: #4a4a4a;
+  color: white;
+  width: 250px;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  float: left;
+}
+.sidebar h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+.sidebar ul li button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.sidebar ul li button i {
+  margin-right: 10px;
+}
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  background-color: white;
+  height: 100vh;
+  overflow-y: auto;
+}
+.nav-bar {
+  background-color: #4a4a4a;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+.nav-bar h2 {
+  margin: 0;
+  font-size: 18px;
 }

@@ -1,45 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/Home.css') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Define la codificación de caracteres como UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Asegura la compatibilidad con navegadores más antiguos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configura el diseño responsivo -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='css/Home.css') }}"
+    />
+    <!-- Vincula el archivo CSS -->
     <title>Login</title>
-</head>
+    <!-- Título de la página -->
+  </head>
+  <body>
+    <!-- Manejo de mensajes flash para mostrar notificaciones -->
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <!-- Mensaje de alerta que aparece si hay notificaciones -->
+    <div class="AlertaMensaje">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
 
-<body>
-
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="AlertaMensaje">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-
+    <!-- Formulario de inicio de sesión -->
     <div class="login">
-        <h1>Login</h1>
-        <form method="POST" action="/Home/">
-            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-            <input type="text" name="Name" placeholder="Username" required="required" />
-            <input type="password" name="Password" placeholder="Password" required="required" />
-            <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
-        </form>
+      <h1>Login</h1>
+      <!-- Título de la sección -->
+      <form method="POST" action="/Home/">
+        <!-- Método POST para enviar credenciales al servidor -->
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <!-- Token CSRF para seguridad -->
+        <input
+          type="text"
+          name="Name"
+          placeholder="Username"
+          required="required"
+        />
+        <!-- Campo para el nombre de usuario -->
+        <input
+          type="password"
+          name="Password"
+          placeholder="Password"
+          required="required"
+        />
+        <!-- Campo para la contraseña -->
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Let me in.
+        </button>
+        <!-- Botón para enviar -->
+      </form>
     </div>
 
+    <!-- Importación de jQuery para manejo de efectos -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
-            setTimeout(function() {
-                $(".AlertaMensaje").fadeOut(1000);
-            },3000);
-        });
+      $(document).ready(function () {
+        // Configura un temporizador para desvanecer los mensajes de alerta después de 3 segundos
+        setTimeout(function () {
+          $(".AlertaMensaje").fadeOut(1000); // Desvanece en 1 segundo
+        }, 3000); // Espera 3 segundos antes de iniciar
+      });
     </script>
-
-</body>
-
+  </body>
 </html>

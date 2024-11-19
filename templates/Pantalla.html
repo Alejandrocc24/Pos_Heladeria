@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+<!-- Indica que esta plantilla hereda de "base.html" -->
+
+{% block content %}
+<html>
+  <head>
+    <title>Monitor de Cocina</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>MONITOR DE COCINA</h1>
+        <div class="full-screen">
+          <i class="fas fa-expand"></i>
+          <span>Pantalla completa</span>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="button at-time">A tiempo</button>
+        <button class="button delayed">Demorado</button>
+        <button class="button very-delayed">Muy demorado</button>
+        <button class="dropdown">
+          Tipo de venta (3) <i class="fas fa-caret-down"></i>
+        </button>
+        <button class="dropdown">
+          Cocina (3) <i class="fas fa-caret-down"></i>
+        </button>
+        <button class="dropdown">
+          Estado (3) <i class="fas fa-caret-down"></i>
+        </button>
+        <div class="toggle">
+          <input type="checkbox" id="ventas-completas" />
+          <label for="ventas-completas">Ventas completas</label>
+        </div>
+        <div class="toggle">
+          <input type="checkbox" id="ventas-cerradas" />
+          <label for="ventas-cerradas">Ventas cerradas</label>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

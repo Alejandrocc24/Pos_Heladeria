@@ -4,104 +4,134 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title | default("POS de Venta") }}</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/datos.css') }}">
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/> -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
- 
+    <!-- Título dinámico con valor por defecto "POS de Venta" -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/datos.css') }}"
+    />
+    <!-- Carga de fuente awesome para iconos -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header">
       <div class="header">
-        <!-- aqui inicia el codigo de la barra de navegacion -->
+        <!-- Inicio de la barra de navegación -->
         <div class="logo">
-         <img alt="Fudo Logo" height="30" src="https://storage.googleapis.com/a1aa/image/M42XQdZdRu7kGxIw546s3GPL10B0T8EbF8I72JZV2vY9ft4JA.jpg" width="100"/>
+          <!-- Logo del sistema -->
+          <img
+            alt="Fudo Logo"
+            height="30"
+            src="https://storage.googleapis.com/a1aa/image/M42XQdZdRu7kGxIw546s3GPL10B0T8EbF8I72JZV2vY9ft4JA.jpg"
+            width="100"
+          />
         </div>
         <div class="icons">
+          <!-- Botón restaurante -->
           <form method="POST" action="{{ url_for('Home') }}">
             <button type="submit" name="csrf_token" value="{{ csrf_token() }}">
-                <i class="fas fa-utensils"></i>
+              <i class="fas fa-utensils"></i>
             </button>
-        </form>
-          <button>
-            <i class="fas fa-chart-bar">
-            </i>
-           </button>
-           <button>
-            <i class="fas fa-calculator">
-            </i>
-           </button>
-           <button>
-            <i class="fas fa-bowl-food">
-            </i>
-           </button>
-           <button>
-            <i class="fas fa-desktop">
-            </i>
-           </button>
-           <button>
-            <i class="fas fa-cogs">
-            </i>
-           </button>
+          </form>
+
+          <!-- Botón ventas -->
+          <form method="POST" action="{{ url_for('Ventas') }}">
+            <button type="submit" name="csrf_token" value="{{ csrf_token() }}">
+              <i class="fas fa-chart-bar"></i>
+            </button>
+          </form>
+
+          <!-- Botón gastos -->
+          <form method="POST" action="{{ url_for('Gastos') }}">
+            <button type="submit" name="csrf_token" value="{{ csrf_token() }}">
+              <i class="fas fa-calculator"></i>
+            </button>
+          </form>
+
+          <!-- Botón alimentos -->
+          <form method="POST" action="{{ url_for('Productos') }}">
+            <button type="submit" name="csrf_token" value="{{ csrf_token() }}">
+              <i class="fas fa-bowl-food"></i>
+            </button>
+          </form>
+
+          <!-- Botón pantalla -->
+          <form method="POST" action="{{ url_for('Pantalla') }}">
+            <button type="submit" name="csrf_token" value="{{ csrf_token() }}">
+              <i class="fas fa-desktop"></i>
+            </button>
+          </form>
+
+          <!-- Botón configuraciones -->
+          <form method="POST" action="{{ url_for('Configuracion') }}">
+            <button type="submit" name="csrf_token" value="{{ csrf_token() }}">
+              <i class="fas fa-cogs"></i>
+            </button>
+          </form>
         </div>
+
+        <!-- Sección derecha de la barra -->
         <div class="right-section">
-         <div class="date-time">
-          <div class="date">
-           VIERNES 15 NOV.
+          <div class="date-time">
+            <!-- Fecha y hora -->
+            <div class="date">VIERNES 15 NOV.</div>
+            <div class="time">22:12</div>
           </div>
-          <div class="time">
-           22:12
+          <div class="pro">
+            <!-- Indicador de suscripción PRO -->
+            <i class="fas fa-star"></i>
+            PRO
           </div>
-         </div>
-         <div class="pro">
-          <i class="fas fa-star">
-          </i>
-          PRO
-         </div>
-         <div class="user">
-          <i class="fas fa-user">
-          </i>
-          pepitochus admin
-         </div>
-         <div class="icons">
-          <i class="fas fa-envelope">
-          </i>
-          <i class="fas fa-question-circle">
-          </i>
-         </div>
+          <div class="user">
+            <!-- Información del usuario actual -->
+            <i class="fas fa-user"></i>
+            pepitochus admin
+          </div>
+          <div class="icons">
+            <!-- Iconos adicionales -->
+            <i class="fas fa-envelope"></i>
+            <i class="fas fa-question-circle"></i>
+          </div>
         </div>
-       </div>
-<!-- hasta aca llega el contenido de la pagina -->
-      <!-- <div class="logo">
+      </div>
+      <!-- Fin de la barra de navegación -->
+
+      <!-- Sección principal del encabezado -->
+      <div class="logo">
         <h1>Dulce</h1>
       </div>
       <div class="menu-icons">
         <span>Iconos de Menú</span>
       </div>
       <div class="user-info">
+        <!-- Muestra el nombre del usuario actual almacenado en la sesión -->
         <span>{{ session['username'] | default('Usuario') }}</span>
-      </div> -->
+      </div>
     </header>
 
-    <div class="tabs">
-      <button class="tab active" onclick="showSection('tables')">Mesas</button>
-      <button class="tab" onclick="showSection('counter')">Mostrador</button>
-    </div>
+    <!-- Bloque de contenido dinámico -->
+    {% block content %} {% endblock %}
 
-    {% block content %}{% endblock %}
-
+    <!-- Botón para cerrar sesión -->
     <form method="POST" action="{{ url_for('Logout') }}">
       <button type="submit" class="btn btn-primary btn-block btn-large">
         LOGOUT
       </button>
     </form>
 
+    <!-- Script para manejar las secciones dinámicas -->
     <script>
       function showSection(sectionId) {
+        // Muestra la sección correspondiente y oculta las demás
         document.getElementById("tables").style.display =
           sectionId === "tables" ? "block" : "none";
         document.getElementById("counter").style.display =
           sectionId === "counter" ? "block" : "none";
 
+        // Cambia la clase activa en los botones de las pestañas
         document
           .querySelectorAll(".tab")
           .forEach((tab) => tab.classList.remove("active"));

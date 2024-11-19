@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+<!-- Indica que esta plantilla hereda de "base.html" -->
+
+{% block content %}
+<html>
+  <head>
+    <title>Configuración General</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <button class="active">Configuración general</button>
+      <button>Salas y mesas</button>
+    </div>
+    <div class="nav-bar">
+      <h2>CONFIGURACIÓN GENERAL</h2>
+    </div>
+    <div class="sidebar">
+      <ul>
+        <li>
+          <button><i class="fas fa-utensils"></i> Cocinas</button>
+        </li>
+        <li>
+          <button><i class="fas fa-cash-register"></i> Cajas</button>
+        </li>
+        <li>
+          <button><i class="fas fa-print"></i> Impresoras</button>
+        </li>
+        <li>
+          <button><i class="fas fa-print"></i> Opciones de Impresión</button>
+        </li>
+        <li>
+          <button>
+            <i class="fas fa-file-invoice-dollar"></i> Ventas individuales
+          </button>
+        </li>
+        <li>
+          <button>
+            <i class="fas fa-file-invoice"></i> Facturación Electrónica
+          </button>
+        </li>
+        <li>
+          <button><i class="fas fa-users"></i> Usuarios</button>
+        </li>
+        <li>
+          <button><i class="fas fa-user-shield"></i> Roles de usuario</button>
+        </li>
+        <li>
+          <button><i class="fas fa-clock"></i> Turnos</button>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <!-- Content goes here -->
+    </div>
+  </body>
+</html>
+{% endblock %}

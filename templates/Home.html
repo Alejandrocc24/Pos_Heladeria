@@ -1,10 +1,27 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+<!-- Indica que esta plantilla hereda de "base.html" -->
+
+{% block content %}
+<!-- Contenido del bloque "content", que se insertará en la sección definida en "base.html" -->
+<!-- Pestañas de navegación -->
+<div class="tabs">
+  <button class="tab active" onclick="showSection('tables')">Mesas</button>
+  <button class="tab" onclick="showSection('counter')">Mostrador</button>
+</div>
+<!-- Sección de mesas -->
 <div id="tables" class="main-content">
   <h2>Mesas</h2>
+  <!-- Título de la sección -->
   <div class="section-title">Salón</div>
+  <!-- Subtítulo -->
+
+  <!-- Grid para mostrar las mesas -->
   <div class="tables-grid">
+    <!-- Botones para cada mesa con diferentes estados -->
     <button class="table1 occupied">1</button>
+    <!-- Mesa ocupada -->
     <button class="table1 available">2</button>
+    <!-- Mesa disponible -->
     <button class="table1 available">3</button>
     <button class="table1 available">4</button>
     <button class="table1 available">5</button>
@@ -13,50 +30,64 @@
   </div>
 </div>
 
+<!-- Sección del mostrador (inicialmente oculta) -->
 <div id="counter" class="main-content" style="display: none">
   <h2>Mostrador</h2>
+  <!-- Título de la sección -->
+
+  <!-- Barra de búsqueda y botón para nuevo pedido -->
   <div class="search-bar">
     <input type="text" placeholder="Buscar por etiqueta" />
+    <!-- Campo de búsqueda -->
     <button>+ Nuevo Pedido</button>
+    <!-- Botón para agregar un nuevo pedido -->
   </div>
 
+  <!-- Sección de pedidos en curso -->
   <div class="section">
     <h2>EN CURSO</h2>
+    <!-- Subtítulo -->
     <table class="table">
-        <thead>
-            <tr>
-                <th>ID / Etiqueta</th>
-                <th>Hora Inicio</th>
-                <th>Estado</th>
-                <th>Cliente</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="5" class="empty-row">Sin ventas en curso.</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>ID / Etiqueta</th>
+          <th>Hora Inicio</th>
+          <th>Estado</th>
+          <th>Cliente</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- Mensaje cuando no hay pedidos en curso -->
+          <td colspan="5" class="empty-row">Sin ventas en curso.</td>
+        </tr>
+      </tbody>
     </table>
-</div>
-<div class="section">
+  </div>
+
+  <!-- Sección de pedidos cerrados (últimos 5) -->
+  <div class="section">
     <h2>CERRADAS (ÚLTIMAS 5)</h2>
+    <!-- Subtítulo -->
     <table class="table">
-        <thead>
-            <tr>
-                <th>ID / Etiqueta</th>
-                <th>Hora Inicio</th>
-                <th>Estado</th>
-                <th>Cliente</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="5" class="empty-row">Sin ventas cerradas</td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th>ID / Etiqueta</th>
+          <th>Hora Inicio</th>
+          <th>Estado</th>
+          <th>Cliente</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- Mensaje cuando no hay pedidos cerrados -->
+          <td colspan="5" class="empty-row">Sin ventas cerradas</td>
+        </tr>
+      </tbody>
     </table>
+  </div>
 </div>
-</div>
+
 {% endblock %}

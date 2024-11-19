@@ -1,0 +1,129 @@
+{% extends "base.html" %} {% block content %}
+
+<html>
+  <head>
+    <title>Ventas</title>
+    <!-- Título de la página -->
+    <!-- Vincula los estilos de Font Awesome para los íconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+      <a href="#" class="active">Ventas</a>
+      <!-- Opción activa: Ventas -->
+      <a href="#">Movimientos de Caja</a>
+      <!-- Link a Movimientos de Caja -->
+      <a href="#">Arqueos de Caja</a>
+      <!-- Link a Arqueos de Caja -->
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+      <!-- Encabezado principal -->
+      <div class="header">VENTAS</div>
+
+      <!-- Filtros -->
+      <div class="filters">
+        <select>
+          <option>Hora Inicio</option>
+        </select>
+        <select>
+          <option>Turno</option>
+        </select>
+        <select>
+          <option>Diario</option>
+        </select>
+        <select>
+          <option>16</option>
+          <!-- Día -->
+        </select>
+        <select>
+          <option>nov.</option>
+          <!-- Mes -->
+        </select>
+        <select>
+          <option>2024</option>
+          <!-- Año -->
+        </select>
+        <select>
+          <option>Estado de Venta</option>
+        </select>
+        <select>
+          <option>Tipo de Venta</option>
+        </select>
+        <select>
+          <option>Cam / Rep</option>
+          <!-- Camarero o Repartidor -->
+        </select>
+        <select>
+          <option>Cliente</option>
+        </select>
+        <select>
+          <option>Medio de Pago</option>
+        </select>
+        <select>
+          <option>Mesa</option>
+        </select>
+        <select>
+          <option>Facturación</option>
+        </select>
+      </div>
+
+      <!-- Resumen -->
+      <div class="summary">
+        <!-- Rango de fechas y registros -->
+        <div>
+          <p>Del 16/11/24 00:00 hs al 17/11/24 00:00 hs</p>
+          <p>0 registros</p>
+        </div>
+        <!-- Información de personas -->
+        <div>
+          <p>Personas</p>
+        </div>
+        <!-- Promedio por persona -->
+        <div>
+          <p>Promedio por persona</p>
+          <p>-</p>
+        </div>
+        <!-- Promedio por venta -->
+        <div>
+          <p>Promedio por venta</p>
+          <p>-</p>
+        </div>
+        <!-- Total -->
+        <div>
+          <p>Total</p>
+          <p>$0</p>
+        </div>
+      </div>
+
+      <!-- Tabla de ventas -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <!-- Encabezado de la tabla -->
+            <tr>
+              <th>ID / Etiqueta</th>
+              <th>Hora Inicio</th>
+              <th>Hora cierre</th>
+              <th>Estado</th>
+              <th>Mesa</th>
+              <th>Cam / Rep</th>
+              <th>Cliente</th>
+              <th>Facturación</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

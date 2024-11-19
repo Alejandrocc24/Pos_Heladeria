@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+<!-- Indica que esta plantilla hereda de "base.html" -->
+
+{% block content %}
+<html>
+  <head>
+    <title>Gastos</title>
+    <!-- Título de la página -->
+    <!-- Enlace a la biblioteca de íconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Encabezado principal -->
+    <div class="header">
+      <!-- Pestañas para cambiar entre secciones -->
+      <div class="tabs">
+        <div class="tab active">Gastos</div>
+        <!-- Pestaña activa -->
+        <div class="tab">Cat. de Gastos</div>
+        <!-- Otra pestaña -->
+      </div>
+      <!-- Botón para añadir un nuevo gasto -->
+      <div class="new-expense"><i class="fas fa-plus"></i> Nuevo Gasto</div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+      <h1>GASTOS</h1>
+      <!-- Título de la sección -->
+
+      <!-- Filtros para buscar o filtrar gastos -->
+      <div class="filters">
+        <!-- Filtros relacionados con la fecha -->
+        <div>
+          <select>
+            <option>Fecha Creación</option>
+          </select>
+          <select>
+            <option>Diario</option>
+          </select>
+          <select>
+            <option>16</option>
+            <!-- Día -->
+          </select>
+          <select>
+            <option>nov.</option>
+            <!-- Mes -->
+          </select>
+          <select>
+            <option>2024</option>
+            <!-- Año -->
+          </select>
+        </div>
+
+        <!-- Filtros relacionados con detalles adicionales -->
+        <div>
+          <select>
+            <option>Proveedor</option>
+          </select>
+          <select>
+            <option>Categoría</option>
+          </select>
+          <select>
+            <option>Comprobante</option>
+          </select>
+          <select>
+            <option>Medio de Pago</option>
+          </select>
+        </div>
+
+        <!-- Ícono para acciones de filtro adicionales -->
+        <div class="filter-icon">
+          <i class="fas fa-filter"></i>
+        </div>
+      </div>
+
+      <!-- Resumen general -->
+      <div class="summary">
+        <p>Del 16/11/24 00:00 hs al 17/11/24 00:00 hs</p>
+        <!-- Rango de fechas -->
+        <p>0 registros</p>
+        <!-- Cantidad de registros -->
+        <p class="total">Total $0</p>
+        <!-- Total de los gastos -->
+      </div>
+
+      <!-- Tabla para listar los gastos -->
+      <div class="table-container">
+        <table>
+          <!-- Encabezado de la tabla -->
+          <thead>
+            <tr>
+              <th>Fecha de creación <i class="fas fa-sort-down"></i></th>
+              <th>Fecha</th>
+              <th>Proveedor</th>
+              <th>Categoría</th>
+              <th>Comentario</th>
+              <th>Importe</th>
+            </tr>
+          </thead>
+          {% endblock %}
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
