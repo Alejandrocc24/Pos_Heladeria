@@ -22,7 +22,7 @@
 }
 
 .logout-btn:hover {
-  color: #dc3545; 
+  color: #dc3545;
 }
 
 .header .logo h1 {
@@ -402,6 +402,88 @@ th {
   background-color: #f0f0f0;
 }
 
+/*CSS de movimiento de caja*/
+.header {
+  background-color: #555;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h1 {
+  margin: 0;
+  font-size: 18px;
+}
+.header .new-movement {
+  background-color: #444;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.header .new-movement i {
+  margin-right: 5px;
+}
+.container {
+  padding: 20px;
+}
+.filters {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.filters select,
+.filters input {
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.filters .filter-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.summary {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.summary p {
+  margin: 0;
+}
+.summary .balance {
+  font-size: 18px;
+  font-weight: bold;
+}
+.table-container {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+table th {
+  background-color: #f5f5f5;
+}
+
 /* Css de boton gastos*/
 .header {
   background-color: #3a3a3a;
@@ -669,7 +751,7 @@ table th {
   justify-content: space-between;
 }
 
-.headerss{
+.headerss {
   display: flex;
   align-items: center;
 }

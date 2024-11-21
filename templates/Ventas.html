@@ -1,129 +1,191 @@
 {% extends "base.html" %} {% block content %}
 
-<html>
-  <head>
-    <title>Ventas</title>
-    <!-- Título de la página -->
-    <!-- Vincula los estilos de Font Awesome para los íconos -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Barra de navegación -->
-    <div class="navbar">
-      <a href="#" class="active">Ventas</a>
-      <!-- Opción activa: Ventas -->
-      <a href="#">Movimientos de Caja</a>
-      <!-- Link a Movimientos de Caja -->
-      <a href="#">Arqueos de Caja</a>
-      <!-- Link a Arqueos de Caja -->
+<title>Ventas</title>
+<!-- Título de la página -->
+<!-- Vincula los estilos de Font Awesome para los íconos -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+/>
+
+<!-- Barra de navegación -->
+<div class="tabs">
+  <button class="tab active" onclick="showSection('Ventas')">Ventas</button>
+  <button class="tab" onclick="showSection('Movimiento')">
+    Movimiento de caja
+  </button>
+  <button class="tab" onclick="showSection('Arqueo')">Arqueo de caja</button>
+</div>
+
+<!-- Contenedor principal -->
+<div id="Ventas" class="main-content">
+  <div class="container">
+    <!-- Encabezado principal -->
+    <div class="header">VENTAS</div>
+
+    <!-- Filtros -->
+    <div class="filters">
+      <select>
+        <option>Hora Inicio</option>
+      </select>
+      <select>
+        <option>Turno</option>
+      </select>
+      <select>
+        <option>Diario</option>
+      </select>
+      <select>
+        <option>16</option>
+        <!-- Día -->
+      </select>
+      <select>
+        <option>nov.</option>
+        <!-- Mes -->
+      </select>
+      <select>
+        <option>2024</option>
+        <!-- Año -->
+      </select>
+      <select>
+        <option>Estado de Venta</option>
+      </select>
+      <select>
+        <option>Tipo de Venta</option>
+      </select>
+      <select>
+        <option>Cam / Rep</option>
+        <!-- Camarero o Repartidor -->
+      </select>
+      <select>
+        <option>Cliente</option>
+      </select>
+      <select>
+        <option>Medio de Pago</option>
+      </select>
+      <select>
+        <option>Mesa</option>
+      </select>
+      <select>
+        <option>Facturación</option>
+      </select>
     </div>
 
-    <!-- Contenedor principal -->
-    <div class="container">
-      <!-- Encabezado principal -->
-      <div class="header">VENTAS</div>
-
-      <!-- Filtros -->
-      <div class="filters">
-        <select>
-          <option>Hora Inicio</option>
-        </select>
-        <select>
-          <option>Turno</option>
-        </select>
-        <select>
-          <option>Diario</option>
-        </select>
-        <select>
-          <option>16</option>
-          <!-- Día -->
-        </select>
-        <select>
-          <option>nov.</option>
-          <!-- Mes -->
-        </select>
-        <select>
-          <option>2024</option>
-          <!-- Año -->
-        </select>
-        <select>
-          <option>Estado de Venta</option>
-        </select>
-        <select>
-          <option>Tipo de Venta</option>
-        </select>
-        <select>
-          <option>Cam / Rep</option>
-          <!-- Camarero o Repartidor -->
-        </select>
-        <select>
-          <option>Cliente</option>
-        </select>
-        <select>
-          <option>Medio de Pago</option>
-        </select>
-        <select>
-          <option>Mesa</option>
-        </select>
-        <select>
-          <option>Facturación</option>
-        </select>
+    <!-- Resumen -->
+    <div class="summary">
+      <!-- Rango de fechas y registros -->
+      <div>
+        <p>Del 16/11/24 00:00 hs al 17/11/24 00:00 hs</p>
+        <p>0 registros</p>
       </div>
-
-      <!-- Resumen -->
-      <div class="summary">
-        <!-- Rango de fechas y registros -->
-        <div>
-          <p>Del 16/11/24 00:00 hs al 17/11/24 00:00 hs</p>
-          <p>0 registros</p>
-        </div>
-        <!-- Información de personas -->
-        <div>
-          <p>Personas</p>
-        </div>
-        <!-- Promedio por persona -->
-        <div>
-          <p>Promedio por persona</p>
-          <p>-</p>
-        </div>
-        <!-- Promedio por venta -->
-        <div>
-          <p>Promedio por venta</p>
-          <p>-</p>
-        </div>
-        <!-- Total -->
-        <div>
-          <p>Total</p>
-          <p>$0</p>
-        </div>
+      <!-- Información de personas -->
+      <div>
+        <p>Personas</p>
       </div>
-
-      <!-- Tabla de ventas -->
-      <div class="table-container">
-        <table>
-          <thead>
-            <!-- Encabezado de la tabla -->
-            <tr>
-              <th>ID / Etiqueta</th>
-              <th>Hora Inicio</th>
-              <th>Hora cierre</th>
-              <th>Estado</th>
-              <th>Mesa</th>
-              <th>Cam / Rep</th>
-              <th>Cliente</th>
-              <th>Facturación</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
-          </tbody>
-        </table>
+      <!-- Promedio por persona -->
+      <div>
+        <p>Promedio por persona</p>
+        <p>-</p>
+      </div>
+      <!-- Promedio por venta -->
+      <div>
+        <p>Promedio por venta</p>
+        <p>-</p>
+      </div>
+      <!-- Total -->
+      <div>
+        <p>Total</p>
+        <p>$0</p>
       </div>
     </div>
-  </body>
-</html>
+
+    <!-- Tabla de ventas -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <!-- Encabezado de la tabla -->
+          <tr>
+            <th>ID / Etiqueta</th>
+            <th>Hora Inicio</th>
+            <th>Hora cierre</th>
+            <th>Estado</th>
+            <th>Mesa</th>
+            <th>Cam / Rep</th>
+            <th>Cliente</th>
+            <th>Facturación</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Sección de Movimiento -->
+<div id="Movimiento" class="main-content" style="display: none">
+  <h2>Movimiento de cajar</h2>
+
+  <div class="header">
+    <h1>MOVIMIENTOS DE CAJA</h1>
+    <button class="new-movement">
+      <i class="fas fa-plus"></i> Nuevo Movimiento
+    </button>
+  </div>
+  <div class="container">
+    <div class="filters">
+      <i class="fas fa-th filter-icon"></i>
+      <select>
+        <option>Turno</option>
+      </select>
+      <select>
+        <option>Diario</option>
+      </select>
+      <select>
+        <option>19</option>
+      </select>
+      <select>
+        <option>nov.</option>
+      </select>
+      <select>
+        <option>2024</option>
+      </select>
+      <i class="fas fa-filter filter-icon"></i>
+      <select>
+        <option>Tipo</option>
+      </select>
+    </div>
+    <div class="summary">
+      <p>Del 19/11/24 00:00 hs al 20/11/24 00:00 hs<br />0 registros</p>
+      <p class="balance">Balance<br />$0</p>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Monto</th>
+            <th>Tipo</th>
+            <th>Comentario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- No records to display -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    function changeStatus(button) {
+      if (button.classList.contains("available")) {
+        button.classList.remove("available");
+        button.classList.add("occupied");
+      } else {
+        button.classList.remove("occupied");
+        button.classList.add("available");
+      }
+    }
+  </script>
+</div>
 {% endblock %}
