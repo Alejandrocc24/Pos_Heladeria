@@ -8,13 +8,17 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 />
 
+<link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/Ventas.css') }}"
+    /> 
+    
 <!-- Barra de navegación -->
 <div class="tabs">
-  <button class="tab active" onclick="showSection('Ventas')">Ventas</button>
-  <button class="tab" onclick="showSection('Movimiento')">
-    Movimiento de caja
-  </button>
-  <button class="tab" onclick="showSection('Arqueo')">Arqueo de caja</button>
+  <button class="tab active" onclick="showSectionventas('Ventas')">Ventas</button>
+  <button class="tab" onclick="showSectionventas('Movimiento')">Movimiento de caja</button>
+  <button class="tab" onclick="showSectionventas('Arqueo')">Arqueo de caja</button>
 </div>
 
 <!-- Contenedor principal -->
@@ -125,15 +129,15 @@
 
 <!-- Sección de Movimiento -->
 <div id="Movimiento" class="main-content" style="display: none">
-  <h2>Movimiento de cajar</h2>
+  <h2>Movimiento de caja</h2>
 
   <div class="header">
     <h1>MOVIMIENTOS DE CAJA</h1>
-    <button class="new-movement">
+    <button class="btn-movimiento" onclick="toggleForm()">
       <i class="fas fa-plus"></i> Nuevo Movimiento
     </button>
   </div>
-  <div class="container">
+  <div id="!movimientoForm" class="container">
     <div class="filters">
       <i class="fas fa-th filter-icon"></i>
       <select>
@@ -175,17 +179,57 @@
         </tbody>
       </table>
     </div>
+<!-- Html boton movimiento de caja -->     
+<div id="movimientoForm" class="container">
+  <button class="btn-movimiento" onclick="toggleForm()">Movimiento de Caja</button>
+
+  <div class="form-container" id="movimientoForm">
+    <form>
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="monto">Monto:</label>
+      <input type="number" id="monto" name="monto" step="0.01" placeholder="Ej: 5000" required>
+
+      <label for="tipo">Tipo de Movimiento:</label>
+      <select id="tipo" name="tipo" required>
+        <option value="entrada">Entrada</option>
+        <option value="salida">Salida</option>
+      </select>
+
+      <label for="comentario">Comentario:</label>
+      <textarea id="comentario" name="comentario" placeholder="Añade un comentario" rows="3"></textarea>
+
+      <button type="submit" class="btn-submit">Registrar Movimiento</button>
+    </form>
+  </div>
+</div>
+
   </div>
   <script>
-    function changeStatus(button) {
-      if (button.classList.contains("available")) {
-        button.classList.remove("available");
-        button.classList.add("occupied");
-      } else {
-        button.classList.remove("occupied");
-        button.classList.add("available");
-      }
+    function showSectionventas(sectionId) {
+      // Muestra la sección correspondiente y oculta las demás
+      document.getElementById("Ventas").style.display =
+        sectionId === "Ventas" ? "block" : "none";
+      document.getElementById("Movimiento").style.display =
+        sectionId === "Movimiento" ? "block" : "none";
+        document.getElementById("Arqueo").style.display =
+        sectionId === "Arqueo" ? "block" : "none";
+      // Cambia la clase activa en los botones de las pestañas
+      document
+        .querySelectorAll(".tab")
+        .forEach((tab) => tab.classList.remove("active"));
+      document
+        .querySelector(`.tab[onclick="showSection('${sectionId}')"]`)
+        .classList.add("active");
     }
+    function toggleForm() {
+    const form = document.getElementById('movimientoForm');
+    form.style.display = form.style.display === 'block' ? 'none' : 'block';
+  }
   </script>
 </div>
+
+
+
 {% endblock %}

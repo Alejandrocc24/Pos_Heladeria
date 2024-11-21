@@ -1,0 +1,81 @@
+/* Css de boton gastos*/
+.header {
+    background-color: #3a3a3a;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header .tabs {
+    display: flex;
+  }
+  .header .tabs div {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .header .tabs div.active {
+    border-bottom: 2px solid #007bff;
+  }
+  .header .new-expense {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .content-gastos {
+    padding: 20px;
+  }
+  .content-gastos h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .filters {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .filters select {
+    margin-right: 10px;
+    padding: 5px;
+  }
+  .filters .filter-icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .summary {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  .summary p {
+    margin: 0;
+  }
+  .summary .total {
+    text-align: right;
+    font-weight: bold;
+  }
+  .table-container {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table th,
+  table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  table th {
+    background-color: #f8f9fa;
+  }

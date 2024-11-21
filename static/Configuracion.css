@@ -1,0 +1,86 @@
+/* CSS de configuracion*/
+
+.header {
+    background-color: #4a4a4a;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .headerss {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header button {
+    background: none;
+    border: none;
+    color: white;
+    margin-right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .header button.active {
+    font-weight: bold;
+  }
+  
+  .sidebar {
+    background-color: #4a4a4a;
+    color: white;
+    width: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+    margin-top: 0.1rem;
+    position: static;
+    scroll-behavior: inherit;
+    height: 103vh;
+  }
+  
+  .sidebar h2 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  .sidebar ul li {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar ul li button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar ul li button i {
+    margin-right: 10px;
+  }
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+    background-color: white;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .nav-bar {
+    background-color: #4a4a4a;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-bar h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  

@@ -1,0 +1,67 @@
+/*CSS de pantalla*/
+
+.container {
+    padding: 10px;
+    background-color: #fff;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  .header h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+  .button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .button.at-time {
+    background-color: #e0e0e0;
+    color: #000;
+  }
+  .button.delayed {
+    background-color: #ffeb3b;
+    color: #000;
+  }
+  .button.very-delayed {
+    background-color: #b71c1c;
+    color: #fff;
+  }
+  .dropdown {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .toggle {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  .toggle input {
+    margin-right: 5px;
+  }
+  .full-screen {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .full-screen i {
+    margin-right: 5px;
+  }
+  

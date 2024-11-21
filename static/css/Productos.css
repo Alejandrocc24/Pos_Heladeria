@@ -1,0 +1,106 @@
+/* Css de productos*/
+.navbar {
+    background-color: #4a4a4a;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+  }
+  .navbar a:hover {
+    background-color: #6a6a6a;
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sidebar h2 .menu {
+    display: flex;
+    align-items: center;
+  }
+  .sidebar h2 .menu button {
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  .sidebar h2 .menu button:hover {
+    background-color: #6a6a6a;
+  }
+  .sidebar h2 .menu .importar {
+    background-color: #ff8c00;
+  }
+  .sidebar h2 .menu .importar:hover {
+    background-color: #ffa500;
+  }
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+  }
+  .sidebar a:hover {
+    background-color: #6a6a6a;
+  }
+  .content {
+    margin-left: 220px;
+    padding: 20px;
+  }
+  .search-bar {
+    background-color: #e0e0e0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px; /* Added margin-top to move it down */
+  }
+  .search-bar input {
+    margin-left: 10px;
+    padding: 5px;
+    flex: 1;
+  }
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .table th,
+  .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  .table th {
+    background-color: #f0f0f0;
+  }
+  .top-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  .top-buttons button {
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .top-buttons button:hover {
+    background-color: #6a6a6a;
+  }
+  .top-buttons .importar {
+    background-color: #ff8c00;
+  }
+  .top-buttons .importar:hover {
+    background-color: #ffa500;
+  }
+  

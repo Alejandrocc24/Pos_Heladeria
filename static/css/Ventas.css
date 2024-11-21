@@ -1,0 +1,153 @@
+/*css de ventas*/
+
+.navbar {
+    background-color: #4a4a4a;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 14px;
+  }
+  .navbar a.active {
+    font-weight: bold;
+  }
+  .container {
+    padding: 20px;
+  }
+  .header {
+    background-color: #e0e0e0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .filters {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+  }
+  .filters select {
+    margin-right: 10px;
+    padding: 5px;
+  }
+  .summary {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .summary div {
+    flex: 1;
+    text-align: center;
+  }
+  .summary div:not(:last-child) {
+    border-right: 1px solid #ddd;
+  }
+  .table-container {
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+  }
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+  }
+  th {
+    background-color: #f0f0f0;
+  }
+  
+  /*CSS de movimiento de caja*/
+  .header {
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 18px;
+  }
+  .header .new-movement {
+    background-color: #444;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .header .new-movement i {
+    margin-right: 5px;
+  }
+  .container {
+    padding: 20px;
+  }
+  .filters {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .filters select,
+  .filters input {
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  .filters .filter-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  .summary {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .summary p {
+    margin: 0;
+  }
+  .summary .balance {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .table-container {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table th,
+  table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  table th {
+    background-color: #f5f5f5;
+  }
+  

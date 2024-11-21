@@ -25,9 +25,8 @@
           <h1>Dulce</h1>
           <!-- Logo del sistema -->
           <img
-            alt="Fudo Logo"
             height="30"
-            src="https://storage.googleapis.com/a1aa/image/M42XQdZdRu7kGxIw546s3GPL10B0T8EbF8I72JZV2vY9ft4JA.jpg"
+            src="Images/logo.png"
             width="100"
           />
         
@@ -99,7 +98,7 @@
           </div>
         </div>
         <form method="POST" action="{{ url_for('Logout') }}">
-          <button type="submit" class="logout-btn">
+          <button type="submit" class="logout-btn" name="csrf_token" value="{{ csrf_token() }}"> 
             <i class="fas fa-sign-out-alt"></i> 
           </button>
         </form>

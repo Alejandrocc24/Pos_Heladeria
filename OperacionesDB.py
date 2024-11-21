@@ -46,3 +46,12 @@ def obtener_todas_las_tablas():
         # Captura cualquier excepción y la imprime para depuración
         print(f"Error al obtener datos: {e}")
         return None
+
+def Datos(datooo):
+    conn = ObtenerConexion()
+    Datos = []
+    with conn.cursor() as cursor:
+        cursor.execute('Select * from [dbo].[HIJO] where'(datooo))
+        Datos = cursor.fetchall()
+    conn.close()
+    return Datos
