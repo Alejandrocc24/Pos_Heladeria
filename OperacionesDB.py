@@ -1,4 +1,5 @@
 from Conexion import ObtenerConexion  # Importa la función para conectar con la base de datos
+import psycopg2
 
 # Validar el ingreso del usuario
 def ValidaIngreso(username):
@@ -39,19 +40,34 @@ def obtener_todas_las_tablas():
     conn = ObtenerConexion()  # Crea la conexión con Supabase
     try:
         # Realiza una consulta para seleccionar todos los registros de 'tu_tabla'
-        response = conn.table("tu_tabla").select("*").execute()
+        response = conn.table("movimientos_caja").select("*").execute()
 
         return response.data  # Retorna los datos de la respuesta
     except Exception as e:
         # Captura cualquier excepción y la imprime para depuración
         print(f"Error al obtener datos: {e}")
         return None
+ 
 
-def Datos(datooo):
-    conn = ObtenerConexion()
-    Datos = []
-    with conn.cursor() as cursor:
-        cursor.execute('Select * from [dbo].[HIJO] where'(datooo))
-        Datos = cursor.fetchall()
-    conn.close()
-    return Datos
+
+def guardar_en_db(fecha, monto, tipo_movimiento, tipo_pago, comentario):
+    conn = ObtenerConexion() 
+    try:
+        data = {
+            "fecha": fecha,
+            "monto": monto,
+            "tipoMovimiento": tipo_movimiento,
+            "tipoPago": tipo_pago,
+            "comentario": comentario
+        }
+        response = conn.table('movimientos_caja').insert(data).execute()
+        return response.data  
+
+    except Exception as e:
+        raise Exception(f"Error al insertar en la base de datos: {e}")
+    
+    
+def obtener_todos_los_movimientos():
+    conn = ObtenerConexion()  # Asumiendo que ya tienes esta función configurada
+    response = conn.table("movimientos_caja").select("*").execute() 
+    return response.data

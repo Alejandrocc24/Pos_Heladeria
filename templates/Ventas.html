@@ -17,7 +17,13 @@
 <!-- Barra de navegación -->
 <div class="tabs">
   <button class="tab active" onclick="showSectionventas('Ventas')">Ventas</button>
-  <button class="tab" onclick="showSectionventas('Movimiento')">Movimiento de caja</button>
+
+  <!-- <form method="GET" action="/movimientos"> -->
+    <button class="tab" type="submit" onclick="showSectionventas('Movimiento')">Movimiento de caja</button>
+  <!-- </form> -->
+
+
+  <!-- <button class="tab" onclick="showSectionventas('Movimiento')">Movimiento de caja</button> -->
   <button class="tab" onclick="showSectionventas('Arqueo')">Arqueo de caja</button>
 </div>
 
@@ -137,7 +143,8 @@
       <i class="fas fa-plus"></i> Nuevo Movimiento
     </button>
   </div>
-  <div id="!movimientoForm" class="container">
+
+  <div id="movimientoForm1" class="container">
     <div class="filters">
       <i class="fas fa-th filter-icon"></i>
       <select>
@@ -164,6 +171,7 @@
       <p>Del 19/11/24 00:00 hs al 20/11/24 00:00 hs<br />0 registros</p>
       <p class="balance">Balance<br />$0</p>
     </div>
+    
     <div class="table-container">
       <table>
         <thead>
@@ -175,37 +183,61 @@
           </tr>
         </thead>
         <tbody>
-          <!-- No records to display -->
+          {% for movimiento in movimientos %}
+            <tr>
+              <td>{{ movimiento.fecha }}</td>
+              <td>{{ movimiento.monto }}</td>
+              <td>{{ movimiento.tipoMovimiento }}</td>
+              <td>{{ movimiento.comentario }}</td>
+            </tr>
+          {% else %}
+            <tr>
+              <td colspan="4">No hay registros disponibles.</td>
+            </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
-<!-- Html boton movimiento de caja -->     
-<div id="movimientoForm" class="container">
-  <button class="btn-movimiento" onclick="toggleForm()">Movimiento de Caja</button>
 
-  <div class="form-container" id="movimientoForm">
-    <form>
-      <label for="fecha">Fecha:</label>
-      <input type="date" id="fecha" name="fecha" required>
 
-      <label for="monto">Monto:</label>
-      <input type="number" id="monto" name="monto" step="0.01" placeholder="Ej: 5000" required>
 
-      <label for="tipo">Tipo de Movimiento:</label>
-      <select id="tipo" name="tipo" required>
-        <option value="entrada">Entrada</option>
-        <option value="salida">Salida</option>
-      </select>
 
-      <label for="comentario">Comentario:</label>
-      <textarea id="comentario" name="comentario" placeholder="Añade un comentario" rows="3"></textarea>
+  <!-- Html boton movimiento de caja -->     
+  <div id="movimientoForm" class="container">
+    <div class="form-container">
+      <form method="POST" action="/prueba/">
 
-      <button type="submit" class="btn-submit">Registrar Movimiento</button>
-    </form>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required="required">
+
+        <label for="monto">Monto:</label>
+        <input type="number" id="monto" name="monto" required="required">
+
+        <label for="tipoMovimiento">Tipo de Movimiento:</label>
+        <select id="tipoMovimiento" name="tipoMovimiento" required="required">
+          <option value="entrada">Entrada</option>
+          <option value="salida">Salida</option>
+        </select>
+
+        <label for="tipoPago">Medio de Pago:</label>
+        <select id="tipoPago" name="tipoPago" required="required">
+          <option value="entrada">Efectivo</option>
+          <option value="salida">Tranferencia</option>
+        </select>
+
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" placeholder="Añade un comentario" rows="3"></textarea>
+
+        <button type="submit" class="btn-submit">Registrar Movimiento</button>
+      </form>
+    </div>
   </div>
-</div>
 
   </div>
+
+
   <script>
     function showSectionventas(sectionId) {
       // Muestra la sección correspondiente y oculta las demás
@@ -213,7 +245,7 @@
         sectionId === "Ventas" ? "block" : "none";
       document.getElementById("Movimiento").style.display =
         sectionId === "Movimiento" ? "block" : "none";
-        document.getElementById("Arqueo").style.display =
+      document.getElementById("Arqueo").style.display =
         sectionId === "Arqueo" ? "block" : "none";
       // Cambia la clase activa en los botones de las pestañas
       document
@@ -222,11 +254,16 @@
       document
         .querySelector(`.tab[onclick="showSection('${sectionId}')"]`)
         .classList.add("active");
-    }
+      }
+
     function toggleForm() {
-    const form = document.getElementById('movimientoForm');
-    form.style.display = form.style.display === 'block' ? 'none' : 'block';
-  }
+      const form = document.getElementById('movimientoForm');
+      form.style.display = form.style.display === 'block' ? 'none' : 'block';
+    } 
+
+    const hoy = new Date();
+    const fechaActual = hoy.toISOString().split("T")[0];
+    document.getElementById("fecha").value = fechaActual;
   </script>
 </div>
 

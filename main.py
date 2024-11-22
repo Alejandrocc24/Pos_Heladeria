@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, session, url_for, flash, g
+from flask import Flask, redirect, render_template, request, session, url_for, flash, g, jsonify
 from flask_wtf import CSRFProtect
 from OperacionesDB import *  # Importación de operaciones personalizadas para manejo de la base de datos
 import requests
@@ -78,6 +78,40 @@ def Pantalla():
 @App.route('/Configuracion/', methods=['POST', 'GET'])
 def Configuracion():
      return render_template('Configuracion.html')
+
+
+@App.route('/prueba/', methods=['POST'])
+def guardar_datos():
+    try:
+        # Recuperar datos del formulario
+        fecha = request.form.get('fecha')
+        monto = int(request.form.get('monto'))
+        tipo_movimiento = request.form.get('tipoMovimiento')
+        tipo_pago = request.form.get('tipoPago')
+        comentario = request.form.get('comentario')
+
+        #Envia los datos a la base
+        guardar_en_db(fecha, monto, tipo_movimiento, tipo_pago, comentario)
+
+        #Extrae los datos de la base para mostrar en la tabla Movimientos
+        movimientos = obtener_todos_los_movimientos()
+
+        return render_template('Ventas.html', movimientos=movimientos) 
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Registro de respuesta HTTP para depuración

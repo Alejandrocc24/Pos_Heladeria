@@ -18,3 +18,5 @@ def ObtenerConexion():
         Client: Una instancia del cliente Supabase.
     """
     return create_client(SUPABASE_URL, SUPABASE_KEY)  # Inicializa la conexión con los datos configurados
+
+
